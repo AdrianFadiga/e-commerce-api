@@ -1,24 +1,88 @@
-# README
+<h1>🛍️ Nome do Projeto</h1>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<h2>🚀 Funcionalidades</h2>
 
-Things you may want to cover:
+<ul>
+  <li>💻 Cadastro de usuários</li>
+  <li>📦 Catálogo de produtos</li>
+  <li>🛒 Carrinho de compras</li>
+  <li>🛍️ Checkout</li>
+  <li>📜 Histórico de pedidos</li>
+  <li>📊 Gerenciamento de produtos</li>
+  <li>📋 Gerenciamento de pedidos</li>
+</ul>
 
-* Ruby version
+<h2>🛠️ Tecnologias utilizadas</h2>
 
-* System dependencies
+<ul>
+  <li>Ruby on Rails</li>
+  <li>PostgreSQL</li>
+  <li>HTML/CSS</li>
+  <li>JavaScript</li>
+</ul>
 
-* Configuration
+<h2>🛠️ Configuração do ambiente</h2>
 
-* Database creation
+<p>Para executar este projeto, é necessário ter o Ruby on Rails e o PostgreSQL instalados em seu ambiente de desenvolvimento.</p>
 
-* Database initialization
+<ol>
+  <li>Clone o repositório:</li>
+</ol>
 
-* How to run the test suite
+<pre><code>git clone git@github.com:seu_usuario/seu_projeto.git
+</code></pre>
 
-* Services (job queues, cache servers, search engines, etc.)
+<ol start="2">
+  <li>Instale as dependências do projeto:</li>
+</ol>
 
-* Deployment instructions
+<pre><code>cd seu_projeto
+bundle install
+</code></pre>
 
-* ...
+<ol start="3">
+  <li>Configure o banco de dados:</li>
+</ol>
+
+<p>Abra o arquivo <code>config/database.yml</code> e configure as informações de conexão com o seu banco de dados PostgreSQL.</p>
+
+<ol start="4">
+  <li>Crie o banco de dados:</li>
+</ol>
+
+<pre><code>rails db:create
+</code></pre>
+
+<ol start="5">
+  <li>Execute as migrações:</li>
+</ol>
+
+<pre><code>rails db:migrate
+</code></pre>
+
+<ol start="6">
+  <li>Inicie o servidor:</li>
+</ol>
+
+<pre><code>rails server
+</code></pre>
+
+<h2>🎈 Como utilizar</h2>
+
+<ul>
+  <li>Acesse a página inicial do e-commerce.</li>
+  <li>Realize o cadastro de um novo usuário.</li>
+  <li>Navegue pelo catálogo de produtos.</li>
+  <li>Adicione produtos ao carrinho de compras.</li>
+  <li>Realize o checkout do pedido.</li>
+  <li>Visualize o histórico de seus pedidos.</li>
+  <li>Gerencie os produtos e pedidos como administrador do site.</li>
+</ul>
+
+<h2>🔜 Próximos passos</h2>
+
+<ul>
+  <li>Adicionar opções de pagamento.</li>
+  <li>Implementar um sistema de avaliações de produtos.</li>
+  <li>Melhorar a usabilidade da interface do usuário.</li>
+</ul>
