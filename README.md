@@ -1,4 +1,4 @@
-<h1>🛍️ Nome do Projeto</h1>
+<h1>🛍️ E-Commerce-Api</h1>
 
 <h2>🚀 Funcionalidades</h2>
 
