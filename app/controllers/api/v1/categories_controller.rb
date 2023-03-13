@@ -22,12 +22,12 @@ module Api::V1
       if @category.update(category_params)
         render json: @category
       else
-        render json: @category.errors, status: :unprocessable_entity
+        render json: @category.erros, status: :unprocessable_entity
       end
     end
 
     def destroy
-      @category.destroy
+      render json: @category.errors, status: :unprocessable_entity unless @category.destroy
     end
 
     private
