@@ -13,6 +13,7 @@ services:
     environment:
       DATABASE_URL: postgresql://postgres:postgres@db:5432/e-commerce-api
       RAILS_ENV: development
+    restart: always
 
   db:
     image: postgres
