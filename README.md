@@ -17,54 +17,25 @@
 <ul>
   <li>Ruby on Rails</li>
   <li>PostgreSQL</li>
-  <li>HTML/CSS</li>
-  <li>JavaScript</li>
 </ul>
 
 <h2>🛠️ Configuração do ambiente</h2>
 
-<p>Para executar este projeto, é necessário ter o Ruby on Rails e o PostgreSQL instalados em seu ambiente de desenvolvimento.</p>
+<p>Para executar este projeto, basta possuir o Docker e o docker-compose instalados na sua máquina.</p>
 
 <ol>
   <li>Clone o repositório:</li>
 </ol>
 
-<pre><code>git clone git@github.com:seu_usuario/seu_projeto.git
+<pre><code>git clone git@github.com:AdrianFadiga/e-commerce-api.git
 </code></pre>
 
 <ol start="2">
-  <li>Instale as dependências do projeto:</li>
+  <li>Suba os containers da aplicação:</li>
 </ol>
 
-<pre><code>cd seu_projeto
-bundle install
-</code></pre>
-
-<ol start="3">
-  <li>Configure o banco de dados:</li>
-</ol>
-
-<p>Abra o arquivo <code>config/database.yml</code> e configure as informações de conexão com o seu banco de dados PostgreSQL.</p>
-
-<ol start="4">
-  <li>Crie o banco de dados:</li>
-</ol>
-
-<pre><code>rails db:create
-</code></pre>
-
-<ol start="5">
-  <li>Execute as migrações:</li>
-</ol>
-
-<pre><code>rails db:migrate
-</code></pre>
-
-<ol start="6">
-  <li>Inicie o servidor:</li>
-</ol>
-
-<pre><code>rails server
+<pre><code>cd e-commerce-api
+docker-compose up --build
 </code></pre>
 
 <h2>🎈 Como utilizar</h2>
