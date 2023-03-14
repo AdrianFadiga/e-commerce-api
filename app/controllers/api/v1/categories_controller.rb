@@ -1,6 +1,7 @@
 module Api::V1
   class CategoriesController < ApplicationController
     before_action :set_category, only: %i[show update destroy]
+
     def index
       render json: Category.all
     end
@@ -22,7 +23,7 @@ module Api::V1
       if @category.update(category_params)
         render json: @category
       else
-        render json: @category.erros, status: :unprocessable_entity
+        render json: @category.errors, status: :unprocessable_entity
       end
     end
 
@@ -34,6 +35,7 @@ module Api::V1
 
     def set_category
       @category = Category.find_by(id: params[:id])
+      render json: { category: 'Category not found' }, status: :not_found if @category.nil?
     end
 
     def category_params

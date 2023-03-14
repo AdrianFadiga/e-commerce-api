@@ -43,6 +43,7 @@ module Api::V1
     # Use callbacks to share common setup or constraints between actions.
     def set_product
       @product = Product.find(params[:id])
+      render json: { product: 'Product not found' }, status: :not_found if @product.nil?
     end
 
     # Only allow a list of trusted parameters through.
