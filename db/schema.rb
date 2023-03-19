@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_14_002404) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_19_195802) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -26,6 +26,19 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_14_002404) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_products_on_category_id"
+  end
+
+  create_table "shopping_cart_products", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.integer "quantity"
+    t.uuid "shopping_cart_id"
+    t.uuid "product_id"
+    t.index ["product_id"], name: "index_shopping_cart_products_on_product_id"
+    t.index ["shopping_cart_id"], name: "index_shopping_cart_products_on_shopping_cart_id"
+  end
+
+  create_table "shopping_carts", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "user_id"
+    t.index ["user_id"], name: "index_shopping_carts_on_user_id"
   end
 
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -53,4 +66,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_14_002404) do
   end
 
   add_foreign_key "products", "categories"
+  add_foreign_key "shopping_cart_products", "products"
+  add_foreign_key "shopping_cart_products", "shopping_carts"
+  add_foreign_key "shopping_carts", "users"
 end
