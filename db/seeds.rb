@@ -5,7 +5,7 @@ require 'faker'
 end
 
 # Seed para produtos
-20.times do
+300.times do
   Product.create(
     name: Faker::Commerce.product_name,
     price: Faker::Commerce.price(range: 10.0..100.0),
