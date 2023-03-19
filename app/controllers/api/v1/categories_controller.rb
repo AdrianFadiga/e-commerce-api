@@ -1,6 +1,6 @@
 module Api::V1
   class CategoriesController < ApplicationController
-    before_action :set_category, only: %i[show update destroy]
+    before_action :set_category, only: %i[show update destroy products]
 
     def index
       render json: Category.all
@@ -29,6 +29,10 @@ module Api::V1
 
     def destroy
       render json: @category.errors, status: :unprocessable_entity unless @category.destroy
+    end
+
+    def products
+      render json: @category.products
     end
 
     private
