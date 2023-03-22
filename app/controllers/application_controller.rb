@@ -8,4 +8,8 @@ class ApplicationController < ActionController::API
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:account_update, keys: [:name])
   end
+
+  def authenticate_admin!
+    render json: { error: 'Unauthorized' }, status: :unauthorized unless current_api_user&.admin?
+  end
 end
