@@ -1,6 +1,7 @@
 module Api::V1
   class CategoriesController < ApplicationController
     before_action :set_category, only: %i[show update destroy products]
+    before_action :authenticate_admin!, only: %i[create update destroy]
 
     def index
       render json: Category.all
