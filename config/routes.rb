@@ -7,7 +7,7 @@ Rails.application.routes.draw do
           get 'products'
         end
       end
-      resources :shopping_carts, only: %i[show update destroy]
+      resource :shopping_carts, only: %i[show update destroy], path: 'shopping_carts'
       resources :products
     end
   end
