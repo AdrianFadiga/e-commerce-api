@@ -1,6 +1,8 @@
 module Api::V1
   class ShoppingCartsController < ApplicationController
-    before_action :set_shopping_cart, only: %i[show update destroy]
+    before_action :authenticate_api_user!
+    before_action :set_shopping_cart
+
     def show
       render json: @shopping_cart.shopping_cart_products.as_json(include: :product)
     end
@@ -20,12 +22,12 @@ module Api::V1
     private
 
     def set_shopping_cart
-      @shopping_cart = ShoppingCart.find_by(user_id: params[:id])
+      @shopping_cart = current_api_user.shopping_cart
       render json: { shopping_cart: 'Shopping Cart not found' }, status: :not_found if @shopping_cart.nil?
     end
 
     def shopping_cart_params
-      params.require(:shopping_cart).permit(:id, :product_id, :quantity)
+      params.require(:shopping_cart).permit(:product_id, :quantity)
     end
   end
 end
