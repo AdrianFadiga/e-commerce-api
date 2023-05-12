@@ -22,6 +22,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_19_195802) do
     t.string "name"
     t.float "price"
     t.string "description"
+    t.integer "quantity"
     t.uuid "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
