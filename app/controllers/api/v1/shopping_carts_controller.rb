@@ -27,6 +27,10 @@ module Api::V1
       end
     end
 
+    def checkout
+      CheckoutService.call(current_api_user, @shopping_cart_products)
+    end
+
     private
 
     def set_shopping_cart_products

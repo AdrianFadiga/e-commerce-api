@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :validatable
   include DeviseTokenAuth::Concerns::User
   has_one :shopping_cart
+  has_many :orders
   after_create :build_shopping_cart
 
   enum role: { customer: 'customer', admin: 'admin' }
